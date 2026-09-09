@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJ Associates — Accounting, Taxation, Registration & Compliance Support</title>
+<meta name="description" content="MJ Associates provides personal, professional support for GST registration, GST return filing, income tax filing, accounting, company registration, PAN, digital signature, audit and business documentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F2138;
+    --ink-soft:#33475F;
+    --paper:#F8F6F0;
+    --paper-line:#E7E3D8;
+    --paper-dim:#EFEBE1;
+    --emerald:#1F6F54;
+    --emerald-dark:#164F3D;
+    --gold:#B8862F;
+    --white:#FFFFFF;
+    --radius-s: 4px;
+    --radius-m: 8px;
+    --maxw: 1160px;
+    --font-head: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --email: 'mailto:achujose2017@gmail.com';
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:var(--font-head);
+    color:var(--ink);
+    margin:0;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  img,svg{ display:block; max-width:100%; }
+  button{ font-family:inherit; cursor:pointer; }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  section{ padding:104px 0; position:relative; }
+  @media (max-width:720px){ section{ padding:72px 0; } }
+
+  .section-head{
+    max-width:620px;
+    margin-bottom:56px;
+  }
+  .section-head p.lede{
+    margin-top:14px;
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    max-width:56ch;
+  }
+
+  .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.8rem;
+    color:var(--emerald-dark);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .kicker::before{
+    content:"";
+    width:16px; height:1px;
+    background:var(--gold);
+  }
+
+  h2.section-title{ font-size:clamp(1.7rem, 2.6vw, 2.35rem); font-weight:700; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:var(--radius-s);
+    font-weight:600;
+    font-size:0.95rem;
+    border:1px solid transparent;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+    white-space:nowrap;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primary{
+    background:var(--emerald);
+    color:var(--white);
+  }
+  .btn-primary:hover{ background:var(--emerald-dark); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--ink);
+  }
+  .btn-ghost:hover{ background:var(--ink); color:var(--paper); }
+  .btn-line{
+    background:transparent;
+    color:var(--white);
+    border-color:rgba(255,255,255,0.5);
+  }
+  .btn-line:hover{ border-color:#fff; background:rgba(255,255,255,0.08); }
+
+  /* -------- NAV -------- */
+  header.nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(248,246,240,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .25s ease, box-shadow .25s ease;
+  }
+  header.nav.scrolled{
+    border-bottom-color:var(--paper-line);
+    box-shadow:0 4px 22px rgba(15,33,56,0.05);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--font-head); font-weight:800; font-size:1.15rem;
+    color:var(--ink);
+  }
+  .brand .mark{
+    width:34px;height:34px;border-radius:50%;
+    border:1.5px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.72rem; font-weight:800; letter-spacing:0.02em;
+    color:var(--ink);
+    flex-shrink:0;
+  }
+  .brand small{
+    display:block; font-family:var(--font-body); font-weight:500;
+    font-size:0.66rem; letter-spacing:0.03em; color:var(--ink-soft);
+    margin-top:1px;
+  }
+  nav.links{ display:flex; align-items:center; gap:34px; }
+  nav.links a{
+    font-size:0.93rem; font-weight:500; color:var(--ink-soft);
+    transition:color .15s ease;
+    position:relative;
+  }
+  nav.links a:hover{ color:var(--ink); }
+  .nav-cta{ display:flex; align-items:center; gap:14px; }
+  .nav-toggle{
+    display:none; background:none; border:none; padding:6px;
+  }
+  .nav-toggle span{ display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; transition:transform .2s ease, opacity .2s ease;}
+
+  @media (max-width:900px){
+    nav.links{
+      position:fixed; top:76px; left:0; right:0;
+      background:var(--paper);
+      flex-direction:column; align-items:flex-start;
+      gap:0;
+      padding:8px 28px 20px;
+      border-bottom:1px solid var(--paper-line);
+      transform:translateY(-8px);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+    nav.links.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+    nav.links a{ padding:12px 0; width:100%; border-bottom:1px solid var(--paper-line); }
+    .nav-cta .btn-ghost{ display:none; }
+    .nav-toggle{ display:block; }
+  }
+
+  /* -------- HERO -------- */
+  .hero{
+    padding-top:76px;
+    background:var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    align-items:center;
+    gap:40px;
+    padding-top:88px;
+    padding-bottom:88px;
+  }
+  @media (max-width:900px){
+    .hero .wrap{ grid-template-columns:1fr; padding-top:56px; padding-bottom:56px; }
+    .hero .seal-holder{ order:-1; margin:0 auto 24px; }
+  }
+  .hero .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.8rem; font-weight:600; color:#BFD8CC;
+    margin-bottom:22px;
+  }
+  .hero .eyebrow::before{ content:""; width:16px; height:1px; background:var(--gold); }
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(2.1rem, 4.2vw, 3.35rem);
+    font-weight:800;
+    max-width:14ch;
+  }
+  .hero p.sub{
+    margin-top:22px;
+    font-size:1.08rem;
+    color:#C7D2DC;
+    max-width:46ch;
+  }
+  .hero .cta-row{ display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; }
+
+  .hero .trustline{
+    margin-top:46px;
+    display:flex; gap:28px; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.14);
+    padding-top:22px;
+  }
+  .hero .trustline div{ font-size:0.85rem; color:#A9B7C4; display:flex; align-items:center; gap:8px; }
+  .hero .trustline svg{ flex-shrink:0; }
+
+  .seal-holder{ display:flex; justify-content:center; align-items:center; }
+  .seal{ width:min(320px, 80vw); height:auto; }
+  .seal .ring-text{ font-family:var(--font-head); font-size:6.4px; font-weight:700; letter-spacing:2.2px; fill:#D8C99A; }
+  .seal .ring-path{ fill:none; }
+  .seal-draw{ stroke-dasharray:900; stroke-dashoffset:900; animation:draw 1.9s ease forwards; }
+  .seal-draw-slow{ stroke-dasharray:1300; stroke-dashoffset:1300; animation:draw 2.5s .25s ease forwards; }
+  .seal-fade{ opacity:0; animation:fadein .8s .9s ease forwards; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes fadein{ to{ opacity:1; } }
+
+  /* -------- REVEAL SYSTEM (single, restrained) -------- */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* -------- VALUE STRIP -------- */
+  .value-strip{
+    background:var(--white);
+    border-bottom:1px solid var(--paper-line);
+    padding:46px 0;
+  }
+  .value-strip .wrap{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:32px;
+  }
+  @media (max-width:820px){ .value-strip .wrap{ grid-template-columns:repeat(2,1fr); } }
+  .value-item{ display:flex; gap:14px; align-items:flex-start; }
+  .value-item .icn{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--paper-dim);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .value-item h4{ font-size:0.95rem; font-weight:700; }
+  .value-item p{ margin:4px 0 0; font-size:0.85rem; color:var(--ink-soft); }
+
+  /* -------- ABOUT -------- */
+  .about .wrap{
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:start;
+  }
+  @media (max-width:860px){ .about .wrap{ grid-template-columns:1fr; gap:32px; } }
+  .about-quote{
+    font-family:var(--font-head);
+    font-size:1.5rem; font-weight:700; color:var(--ink);
+    line-height:1.35;
+    border-left:2px solid var(--gold);
+    padding-left:22px;
+  }
+  .about-body p{ color:var(--ink-soft); margin:0 0 16px; }
+  .about-list{ list-style:none; padding:0; margin:26px 0 0; display:grid; gap:14px; }
+  .about-list li{ display:flex; gap:12px; align-items:flex-start; font-size:0.95rem; color:var(--ink); }
+  .about-list svg{ flex-shrink:0; margin-top:3px; }
+
+  /* -------- SERVICES (ledger style) -------- */
+  .services{ background:var(--white); }
+  .service-category{ margin-bottom:8px; }
+  .cat-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding:18px 0 14px;
+    border-bottom:1.5px solid var(--ink);
+    margin-bottom:2px;
+  }
+  .cat-head h3{ font-size:1.15rem; font-weight:700; }
+  .cat-head span.code{ font-size:0.78rem; color:var(--gold); font-weight:700; letter-spacing:0.04em; }
+
+  .ledger-row{
+    display:grid;
+    grid-template-columns:44px 1fr auto;
+    gap:20px;
+    align-items:center;
+    padding:20px 0;
+    border-bottom:1px solid var(--paper-line);
+    transition:background .18s ease;
+  }
+  .ledger-row:hover{ background:var(--paper); }
+  .ledger-row .icn{
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid var(--paper-line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .ledger-row .txt h4{ font-size:1rem; font-weight:700; }
+  .ledger-row .txt p{ margin:3px 0 0; font-size:0.88rem; color:var(--ink-soft); max-width:52ch; }
+  .ledger-row .go{
+    font-size:0.85rem; font-weight:600; color:var(--emerald-dark);
+    display:flex; align-items:center; gap:6px;
+    white-space:nowrap;
+  }
+  .ledger-row .go svg{ transition:transform .15s ease; }
+  .ledger-row:hover .go svg{ transform:translateX(3px); }
+  @media (max-width:640px){
+    .ledger-row{ grid-template-columns:38px 1fr; }
+    .ledger-row .go{ grid-column:2; margin-top:6px; }
+  }
+
+  .service-categories{ display:grid; grid-template-columns:1fr 1fr; gap:0 56px; }
+  @media (max-width:860px){ .service-categories{ grid-template-columns:1fr; gap:0; } }
+
+  /* -------- WHO WE SERVE -------- */
+  .audience{ background:var(--ink); color:var(--paper); }
+  .audience .section-head p.lede{ color:#B9C4CE; }
+  .audience .kicker{ color:#8FCBB2; }
+  .audience-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.1);
+  }
+  @media (max-width:860px){ .audience-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .audience-grid{ grid-template-columns:1fr; } }
+  .audience-cell{
+    background:var(--ink);
+    padding:30px 26px;
+  }
+  .audience-cell .icn{
+    width:36px;height:36px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.3);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .audience-cell h4{ color:var(--white); font-size:1rem; font-weight:700; }
+  .audience-cell p{ margin:6px 0 0; font-size:0.86rem; color:#A9B7C4; }
+
+  /* -------- WHY CHOOSE -------- */
+  .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--paper-line); border:1px solid var(--paper-line); }
+  @media (max-width:860px){ .why-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .why-grid{ grid-template-columns:1fr; } }
+  .why-cell{ background:var(--white); padding:30px 26px; }
+  .why-cell .icn{ width:38px;height:38px;border-radius:50%; background:var(--paper-dim); display:flex;align-items:center;justify-content:center; margin-bottom:16px; }
+  .why-cell h4{ font-size:1rem; font-weight:700; }
+  .why-cell p{ margin:6px 0 0; font-size:0.88rem; color:var(--ink-soft); }
+
+  /* -------- HOW IT WORKS -------- */
+  .steps{ background:var(--white); }
+  .step-row{ display:grid; grid-template-columns:100px 1fr; gap:8px; }
+  .step{
+    display:contents;
+  }
+  .step .num{
+    font-family:var(--font-head); font-weight:800; font-size:1.1rem; color:var(--gold);
+    padding:24px 0; border-top:1px solid var(--paper-line);
+  }
+  .step .body{ padding:24px 0; border-top:1px solid var(--paper-line); }
+  .step .body h4{ font-size:1.02rem; font-weight:700; }
+  .step .body p{ margin:5px 0 0; color:var(--ink-soft); font-size:0.92rem; }
+  .step:last-child .num, .step:last-child .body{ border-bottom:1px solid var(--paper-line); }
+  @media (max-width:560px){ .step-row{ grid-template-columns:56px 1fr; } }
+
+  /* -------- CTA BANNERS -------- */
+  .cta-banner{
+    background:var(--emerald-dark);
+    color:var(--white);
+    border-radius:var(--radius-m);
+    padding:48px 44px;
+    display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;
+  }
+  .cta-banner h3{ color:var(--white); font-size:1.4rem; max-width:26ch; }
+  .cta-banner p{ margin:8px 0 0; color:#CFE3DA; max-width:44ch; font-size:0.95rem; }
+  .cta-banner .btn-primary{ background:var(--white); color:var(--emerald-dark); }
+  .cta-banner .btn-primary:hover{ background:#EFF6F2; }
+
+  .cta-pair{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media (max-width:860px){ .cta-pair{ grid-template-columns:1fr; } .cta-banner{ padding:36px 30px; } }
+
+  /* -------- CONTACT -------- */
+  .contact{ background:var(--paper-dim); }
+  .contact .wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start; }
+  @media (max-width:900px){ .contact .wrap{ grid-template-columns:1fr; gap:36px; } }
+
+  .contact-info{ display:grid; gap:22px; }
+  .info-row{ display:flex; gap:14px; align-items:flex-start; }
+  .info-row .icn{ width:38px;height:38px;border-radius:50%; background:var(--white); border:1px solid var(--paper-line); display:flex;align-items:center;justify-content:center; flex-shrink:0; }
+  .info-row h4{ font-size:0.88rem; font-weight:700; color:var(--ink-soft); text-transform:none; }
+  .info-row p{ margin:3px 0 0; font-size:0.98rem; font-weight:600; color:var(--ink); }
+  .info-row p.placeholder{ color:#8A93A6; font-weight:500; font-style:italic; }
+
+  .whatsapp-btn{
+    margin-top:6px;
+    display:inline-flex; align-items:center; gap:10px;
+    background:#1F6F54; color:#fff; padding:13px 22px; border-radius:var(--radius-s);
+    font-weight:600; font-size:0.92rem;
+  }
+  .whatsapp-btn:hover{ background:var(--emerald-dark); }
+
+  form.enquiry{ background:var(--white); border:1px solid var(--paper-line); border-radius:var(--radius-m); padding:36px; }
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:520px){ .form-grid{ grid-template-columns:1fr; } }
+  .field{ display:flex; flex-direction:column; gap:7px; }
+  .field.full{ grid-column:1 / -1; }
+  .field label{ font-size:0.82rem; font-weight:600; color:var(--ink-soft); }
+  .field input, .field select, .field textarea{
+    font-family:inherit; font-size:0.95rem; color:var(--ink);
+    border:1px solid var(--paper-line); border-radius:var(--radius-s);
+    padding:12px 14px; background:var(--paper);
+    outline-offset:2px;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid var(--emerald); border-color:var(--emerald); }
+  .field textarea{ resize:vertical; min-height:100px; }
+  form.enquiry .btn{ margin-top:22px; width:100%; }
+  .form-note{ font-size:0.78rem; color:#8A93A6; margin-top:12px; }
+
+  /* -------- FOOTER -------- */
+  footer{ background:var(--ink); color:#A9B7C4; padding:56px 0 28px; }
+  .foot-top{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,0.12); }
+  @media (max-width:760px){ .foot-top{ grid-template-columns:1fr; gap:28px; } }
+  .foot-brand{ display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .foot-brand .mark{ width:34px;height:34px;border-radius:50%; border:1.5px solid #A9B7C4; display:flex;align-items:center;justify-content:center; font-size:0.7rem; font-weight:800; color:var(--white); }
+  footer h5{ color:var(--white); font-size:0.82rem; font-weight:700; margin:0 0 14px; }
+  footer p{ font-size:0.88rem; margin:0; }
+  .foot-links{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+  .foot-links a{ font-size:0.88rem; color:#A9B7C4; transition:color .15s ease; }
+  .foot-links a:hover{ color:var(--white); }
+  .foot-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:22px; flex-wrap:wrap; gap:10px; font-size:0.8rem; color:#7C8A98; }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0; background:var(--ink); color:#fff; padding:10px 16px; z-index:200;
+  }
+  .skip-link:focus{ left:12px; top:12px; }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--emerald); outline-offset:2px;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="siteNav">
+  <div class="wrap nav-row">
+    <a href="#home" class="brand">
+      <span class="mark">MJ</span>
+      <span>MJ Associates<small>Accounting &amp; Compliance</small></span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#who-we-serve">Who We Serve</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Accounting · Taxation · Registration · Compliance</div>
+        <h1>Reliable accounting, tax &amp; business support — simplified.</h1>
+        <p class="sub">MJ Associates helps individuals and businesses manage GST, income tax, accounting, registrations, audits and essential business documentation, with direct, personal support at every step.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="#services" class="btn btn-line">Explore Services</a>
+        </div>
+        <div class="trustline">
+          <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#8FCBB2" stroke-width="1.3"/><path d="M5 8.2l2 2 4-4.4" stroke="#8FCBB2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Personal attention, not a call centre</div>
+          <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#8FCBB2" stroke-width="1.3"/><path d="M5 8.2l2 2 4-4.4" stroke="#8FCBB2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Confidential handling of your records</div>
+          <div><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#8FCBB2" stroke-width="1.3"/><path d="M5 8.2l2 2 4-4.4" stroke="#8FCBB2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Plain-language explanations</div>
+        </div>
+      </div>
+
+      <div class="seal-holder" aria-hidden="true">
+        <svg class="seal" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="118" stroke="#3A4F67" stroke-width="1"/>
+          <circle class="ring-path seal-draw" cx="150" cy="150" r="132" stroke="#B8862F" stroke-width="1.4"/>
+          <path id="ringPath" d="M150,150 m-104,0 a104,104 0 1,1 208,0 a104,104 0 1,1 -208,0" fill="none"/>
+          <text class="ring-text">
+            <textPath href="#ringPath" startOffset="0%">GST &#8226; INCOME TAX &#8226; REGISTRATION &#8226; ACCOUNTING &#8226; AUDIT &#8226; PAN &#8226;</textPath>
+          </text>
+          <circle class="ring-path seal-draw-slow" cx="150" cy="150" r="88" stroke="#8FCBB2" stroke-width="1"/>
+          <g class="seal-fade">
+            <circle cx="150" cy="150" r="60" fill="#132C48" stroke="#B8862F" stroke-width="1.2"/>
+            <path d="M124 152l17 17 34-38" stroke="#8FCBB2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STRIP -->
+  <section class="value-strip">
+    <div class="wrap">
+      <div class="value-item">
+        <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l6 3v4c0 4-2.5 6.6-6 7.3C5.5 15.6 3 13 3 9V5l6-3z" stroke="#0F2138" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div><h4>Confidential by default</h4><p>Your financial information is handled with care, every time.</p></div>
+      </div>
+      <div class="value-item">
+        <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 14V4a1 1 0 011-1h8a1 1 0 011 1v10l-5-2.5L3 14z" stroke="#0F2138" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+        <div><h4>Plain, clear language</h4><p>No jargon — explanations that make sense to a business owner.</p></div>
+      </div>
+      <div class="value-item">
+        <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#0F2138" stroke-width="1.3"/><path d="M6 9h6M6 12h4M6 6h6" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div><h4>One point of contact</h4><p>Tax, accounts, registration and documentation, handled together.</p></div>
+      </div>
+      <div class="value-item">
+        <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v14M4 6l5-4 5 4M4 12l5 4 5-4" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>Ongoing support</h4><p>Support continues after filing — not a one-time transaction.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="kicker">About MJ Associates</div>
+        <p class="about-quote">"Professional support for your business. Personal attention for every client."</p>
+      </div>
+      <div class="about-body reveal">
+        <p>MJ Associates provides personal, professional assistance with taxation, accounting, registration and compliance requirements — for individuals, professionals and small businesses who would rather focus on running their work than on paperwork.</p>
+        <p>Every client is handled directly, with clear communication and practical solutions suited to how their business actually operates — whether that's a retail counter, a clinic, a restaurant kitchen or a small office.</p>
+        <ul class="about-list">
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1F6F54" stroke-width="1.3"/><path d="M5 8.2l2 2 4-4.4" stroke="#1F6F54" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Direct, individual attention on every engagement</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1F6F54" stroke-width="1.3"/><path d="M5 8.2l2 2 4-4.4" stroke="#1F6F54" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Practical solutions suited to small and growing businesses</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1F6F54" stroke-width="1.3"/><path d="M5 8.2l2 2 4-4.4" stroke="#1F6F54" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Accurate, careful handling of accounts and filings</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1F6F54" stroke-width="1.3"/><path d="M5 8.2l2 2 4-4.4" stroke="#1F6F54" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg> Confidential treatment of all financial and business information</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Services</div>
+        <h2 class="section-title">Support organised around what you actually need</h2>
+        <p class="lede">Eight areas of work, grouped into four practical categories — so you can find what applies to you without wading through a long list.</p>
+      </div>
+
+      <div class="service-categories">
+        <div>
+          <div class="service-category reveal">
+            <div class="cat-head"><h3>Taxation</h3><span class="code">01</span></div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="1.5" stroke="#0F2138" stroke-width="1.3"/><path d="M6 8h6M6 11h4" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>GST Registration</h4><p>Getting your business registered under GST, handled end to end.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 3h8l2 2v10a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#0F2138" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 9h6M6 12h4" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>GST Return Filing</h4><p>Regular, on-time filing so you stay compliant month after month.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.2" stroke="#0F2138" stroke-width="1.3"/><path d="M9 6v3l2 1.5" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="txt"><h4>Income Tax Return Filing</h4><p>Accurate ITR filing and the documentation that goes with it.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="service-category reveal">
+            <div class="cat-head"><h3>Accounting</h3><span class="code">02</span></div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="2" stroke="#0F2138" stroke-width="1.3"/><path d="M6.5 6.5h5M6.5 9h5M6.5 11.5h3" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>Account Outsourcing</h4><p>Hand over day-to-day accounting so you can focus on the business.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5h12M3 9h12M3 13h8" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>Bookkeeping</h4><p>Organised, up-to-date books that reflect what's actually happening.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v12M4 8l5-5 5 5" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="txt"><h4>Financial Record Support</h4><p>Steady maintenance of the records your business relies on.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="service-category reveal">
+            <div class="cat-head"><h3>Business Registration</h3><span class="code">03</span></div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="1.5" stroke="#0F2138" stroke-width="1.3"/><path d="M9 4v10" stroke="#0F2138" stroke-width="1.3"/></svg></div>
+              <div class="txt"><h4>Company Registration</h4><p>Setting up your company the right way, from the first step.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="6.5" cy="7" r="2.2" stroke="#0F2138" stroke-width="1.3"/><circle cx="11.5" cy="7" r="2.2" stroke="#0F2138" stroke-width="1.3"/><path d="M3 14c.6-2 2-3 3.5-3s2.9 1 3.5 3M8 14c.6-2 2-3 3.5-3s2.9 1 3.5 3" stroke="#0F2138" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>Partnership Deed</h4><p>Drafting and documentation support for setting up a partnership.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="5" width="12" height="8" rx="1.5" stroke="#0F2138" stroke-width="1.3"/><circle cx="7" cy="9" r="1.4" stroke="#0F2138" stroke-width="1.1"/><path d="M11 8h2M11 10h2" stroke="#0F2138" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>PAN Card Services</h4><p>Application and correction support for individuals and businesses.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l6 3v4c0 4-2.5 6.6-6 7.3C5.5 15.6 3 13 3 9V5l6-3z" stroke="#0F2138" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+              <div class="txt"><h4>Digital Signature Certificate</h4><p>Assistance obtaining a DSC for filings and registrations.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="service-category reveal">
+            <div class="cat-head"><h3>Business Documentation</h3><span class="code">04</span></div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 3h7l3 3v9a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#0F2138" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 9h6M6 12h4" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>Project Report Preparation</h4><p>Financial documentation prepared for loans and business needs.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.2" stroke="#0F2138" stroke-width="1.3"/><path d="M6.5 9l2 2 3-4" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="txt"><h4>Audit Services</h4><p>Assistance with business and account-related audit requirements.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+
+            <div class="ledger-row">
+              <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="1.5" stroke="#0F2138" stroke-width="1.3"/><path d="M6 8h6M6 11h6" stroke="#0F2138" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              <div class="txt"><h4>Other Documentation</h4><p>General business and financial documentation support, as needed.</p></div>
+              <a href="#contact" class="go">Get Assistance <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="#164F3D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="audience" id="who-we-serve">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Who We Serve</div>
+        <h2 class="section-title">Supporting businesses and professionals like you</h2>
+        <p class="lede">Every kind of business has different paperwork and deadlines. Here's how MJ Associates typically helps.</p>
+      </div>
+      <div class="audience-grid reveal">
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 2h6l1 3-1 1v8H5V6L4 5l1-3z" stroke="#8FCBB2" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+          <h4>Dress &amp; Clothing Stores</h4><p>GST, billing and accounting support built around retail counter sales.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.2 2.5L12 5l-2 2 .5 2.7L8 8.4 5.5 9.7 6 7 4 5l2.8-.5L8 2z" stroke="#8FCBB2" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+          <h4>Fancy Stores</h4><p>Compliance and accounting for fast-moving, varied-inventory shops.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="6" width="5" height="6" stroke="#8FCBB2" stroke-width="1.1"/><rect x="9" y="4" width="5" height="8" stroke="#8FCBB2" stroke-width="1.1"/></svg></div>
+          <h4>Wholesale Businesses</h4><p>GST and accounting support for higher-volume, bulk transactions.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 6l1.5-4h9L14 6M3 6v7h10V6" stroke="#8FCBB2" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+          <h4>Retail Shops</h4><p>GST, accounting, return filing and compliance for everyday retail.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="5.5" cy="6" r="1.5" stroke="#8FCBB2" stroke-width="1.1"/><path d="M2 6h1M8 6h6M3 9h10l-1 4H4l-1-4z" stroke="#8FCBB2" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+          <h4>Grocery Stores</h4><p>Straightforward accounting and filing support for daily-turnover shops.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="4.5" r="2" stroke="#8FCBB2" stroke-width="1.1"/><path d="M4 14v-1.5c0-2 2-3.5 4-3.5s4 1.5 4 3.5V14" stroke="#8FCBB2" stroke-width="1.1"/></svg></div>
+          <h4>Doctors &amp; Professionals</h4><p>Income tax, accounting and documentation for practising professionals.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2.5" y="5" width="11" height="8" rx="1" stroke="#8FCBB2" stroke-width="1.1"/><path d="M6 5V3.5A1.5 1.5 0 017.5 2h1A1.5 1.5 0 0110 3.5V5" stroke="#8FCBB2" stroke-width="1.1"/></svg></div>
+          <h4>Office Workers / Salaried</h4><p>Income tax filing and financial documentation for individuals.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2c1.5 2 2.5 4.2 2.5 6.5A2.5 2.5 0 018 11a2.5 2.5 0 01-2.5-2.5C5.5 6.2 6.5 4 8 2z" stroke="#8FCBB2" stroke-width="1.1" stroke-linejoin="round"/><path d="M6.5 11L5 14h6l-1.5-3" stroke="#8FCBB2" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+          <h4>Restaurants</h4><p>GST, accounting, return filing and compliance-related support.</p>
+        </div>
+        <div class="audience-cell">
+          <div class="icn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12l8-8M6 4h6v6" stroke="#8FCBB2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Entrepreneurs &amp; New Businesses</h4><p>Registration, PAN, accounting and compliance from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Why Choose MJ Associates</div>
+        <h2 class="section-title">A dependable partner for the paperwork side of your business</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-cell">
+          <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="2.5" stroke="#0F2138" stroke-width="1.2"/><path d="M4 15c.8-3 2.7-4.5 5-4.5s4.2 1.5 5 4.5" stroke="#0F2138" stroke-width="1.2"/></svg></div>
+          <h4>Personalized Service</h4><p>Every client receives direct and individual attention.</p>
+        </div>
+        <div class="why-cell">
+          <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 9h10M9 4l5 5-5 5" stroke="#0F2138" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Simple &amp; Clear</h4><p>Complex accounting and tax processes explained in plain language.</p>
+        </div>
+        <div class="why-cell">
+          <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l6 3v4c0 4-2.5 6.6-6 7.3C5.5 15.6 3 13 3 9V5l6-3z" stroke="#0F2138" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+          <h4>Reliable Compliance Support</h4><p>Helping you stay organised with tax, accounting and filing deadlines.</p>
+        </div>
+        <div class="why-cell">
+          <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="4" y="8" width="10" height="7" rx="1.3" stroke="#0F2138" stroke-width="1.2"/><path d="M6.5 8V6a2.5 2.5 0 015 0v2" stroke="#0F2138" stroke-width="1.2"/></svg></div>
+          <h4>Confidentiality</h4><p>Client financial and business information is handled with care.</p>
+        </div>
+        <div class="why-cell">
+          <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="1.5" stroke="#0F2138" stroke-width="1.2"/><path d="M6 8.5l2 2 4-4.5" stroke="#0F2138" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>Business-Friendly Approach</h4><p>Designed around how small businesses and professionals actually work.</p>
+        </div>
+        <div class="why-cell">
+          <div class="icn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="#0F2138" stroke-width="1.2"/><path d="M9 2.5v13M2.5 9h13" stroke="#0F2138" stroke-width="1.2"/></svg></div>
+          <h4>One-Point Assistance</h4><p>Tax, accounting, registration and documentation, in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">How It Works</div>
+        <h2 class="section-title">A straightforward process, start to finish</h2>
+      </div>
+      <div class="step-row reveal">
+        <div class="step">
+          <div class="num">01</div>
+          <div class="body"><h4>Contact</h4><p>Tell us what service or assistance you need.</p></div>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <div class="body"><h4>Understand</h4><p>We go through your requirements and documents together.</p></div>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <div class="body"><h4>Process</h4><p>MJ Associates handles the accounting, tax, registration or documentation work.</p></div>
+        </div>
+        <div class="step">
+          <div class="num">04</div>
+          <div class="body"><h4>Support</h4><p>You receive updates and ongoing assistance where required.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA PAIR -->
+  <section>
+    <div class="wrap cta-pair reveal">
+      <div class="cta-banner">
+        <div>
+          <h3>Need help with your GST or tax filing?</h3>
+          <p>Let MJ Associates help you handle the process with clarity and confidence.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+      </div>
+      <div class="cta-banner" style="background:var(--ink);">
+        <div>
+          <h3>Starting a business?</h3>
+          <p style="color:#C7D2DC;">From registration and PAN to accounting and compliance, get the essential support you need.</p>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="background:var(--gold); color:var(--ink);">Talk to MJ Associates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <div class="kicker reveal">Contact</div>
+        <h2 class="section-title reveal">Let's talk about what you need</h2>
+        <p class="lede reveal" style="margin-bottom:32px;">Reach out directly, or send an enquiry and MJ Associates will get back to you.</p>
+
+        <div class="contact-info reveal">
+          <div class="info-row">
+            <div class="icn"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M4 3h2.3l1 3-1.5 1a9 9 0 004.7 4.7l1-1.5 3 1V14a1.5 1.5 0 01-1.6 1.5A11.5 11.5 0 013 4.6 1.5 1.5 0 014 3z" stroke="#0F2138" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+            <div><h4>Phone</h4><p><a href="tel:+918075521973" style="color:inherit; font-weight:600;">+91 8075521973</a></p></div>
+          </div>
+          <div class="info-row">
+            <div class="icn"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="2.5" y="4" width="12" height="9" rx="1.5" stroke="#0F2138" stroke-width="1.2"/><path d="M3 5l5.5 4.5L14 5" stroke="#0F2138" stroke-width="1.2"/></svg></div>
+            <div><h4>Email</h4><p><a href="mailto:mjassociates1992@gmail.com" style="color:inherit; font-weight:600;">mjassociates1992@gmail.com</a></p></div>
+          </div>
+          <div class="info-row">
+            <div class="icn"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M8.5 2c-2.5 0-4.5 2-4.5 4.5 0 3.3 4.5 8 4.5 8s4.5-4.7 4.5-8C13 4 11 2 8.5 2z" stroke="#0F2138" stroke-width="1.2" stroke-linejoin="round"/><circle cx="8.5" cy="6.5" r="1.5" stroke="#0F2138" stroke-width="1.1"/></svg></div>
+            <div><h4>Office Address</h4><p class="placeholder">Karuvanchal, Near Post Office, Taliparamba, Kannur, Kerala - 670571</p></div>
+          </div>
+          <div class="info-row">
+            <div class="icn"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="6" stroke="#0F2138" stroke-width="1.2"/><path d="M8.5 5.5v3l2.2 1.3" stroke="#0F2138" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+            <div><h4>Business Hours</h4><p class="placeholder">8:00 AM - 5:00 PM</p></div>
+          </div>
+          <!-- <a href="#" class="whatsapp-btn">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2.5a6.5 6.5 0 00-5.6 9.8L2.5 15.5l3.3-.9A6.5 6.5 0 109 2.5z" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/><path d="M6.3 6.5c.2 2 2.2 4 4.2 4.2.6.05.9-.5.6-1l-.4-.6c-.2-.3-.6-.4-.9-.2l-.3.2a3.2 3.2 0 01-1.6-1.6l.2-.3c.2-.3.1-.7-.2-.9l-.6-.4c-.5-.3-1 0-1 .6z" stroke="#fff" stroke-width="1"/></svg>
+            WhatsApp / Contact Now
+          </a> -->
+          <!-- <p class="form-note">https://www.google.com/maps/place/M+J+ASSOCIATES/@12.1684525,75.4601379,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba4450d5ec802cd:0x730914c42294942d!8m2!3d12.1684525!4d75.4627128!16s%2Fg%2F11xkfjxk_t?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D</p> -->
+        </div>
+      </div>
+
+      <form class="enquiry reveal" action="https://formsubmit.co/achujose2017@gmail.com" method="POST" onsubmit="document.getElementById('formSent').style.display='block'; setTimeout(() => { this.reset(); document.getElementById('formSent').style.display='none'; }, 2000);">
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="Name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone Number</label>
+            <input id="f-phone" name="Phone Number" type="tel" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-biztype">Business Type</label>
+            <select id="f-biztype" name="Business Type">
+              <option value="">Select one</option>
+              <option>Dress &amp; Clothing Store</option>
+              <option>Fancy Store</option>
+              <option>Wholesale Business</option>
+              <option>Retail Shop</option>
+              <option>Grocery Store</option>
+              <option>Doctor / Professional</option>
+              <option>Office Worker / Salaried</option>
+              <option>Restaurant</option>
+              <option>Entrepreneur / New Business</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-service">Service Required</label>
+            <select id="f-service" name="Service Required">
+              <option value="">Select one</option>
+              <option>GST Registration</option>
+              <option>GST Return Filing</option>
+              <option>Income Tax Return Filing</option>
+              <option>Account Outsourcing / Bookkeeping</option>
+              <option>Company Registration</option>
+              <option>Partnership Deed</option>
+              <option>PAN Card Services</option>
+              <option>Digital Signature Certificate</option>
+              <option>Project Report Preparation</option>
+              <option>Audit Services</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="Message" placeholder="Tell us a little about what you need help with"></textarea>
+          </div>
+        </div>
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+        <p class="form-note" id="formSent" style="display:none; color:#1F6F54; font-weight:600;">Thank you — your enquiry has been sent!</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="mark">MJ</span>
+          <strong style="color:#fff; font-family:'Manrope',sans-serif; font-size:1.05rem;">MJ Associates</strong>
+        </div>
+        <p>Accounting &middot; Taxation &middot; Registration &middot; Compliance &middot; Business Support</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul class="foot-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#who-we-serve">Who We Serve</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="foot-links">
+          <li>+91 8075521973</li>
+          <li>mjassociates1992@gmail.com</li>
+          <li>+91 9400258768</li>
+          <li>Karuvanchal, Near Post Office, Taliparamba, Kannur, Kerala - 670571</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 MJ Associates. All rights reserved.</span>
+      <span>Built for individuals, professionals and small businesses.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav shadow
+  const navEl = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  }));
+
+  // Single restrained scroll-reveal system
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
