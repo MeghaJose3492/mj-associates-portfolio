@@ -843,62 +843,21 @@
         </div>
       </div>
 
-      <form class="enquiry reveal" id="enquiryForm">
-        <div class="form-grid">
-          <div class="field">
-            <label for="f-name">Name</label>
-            <input id="f-name" name="Name" type="text" required autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone Number</label>
-            <input id="f-phone" name="Phone Number" type="tel" required autocomplete="tel">
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" required autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="f-biztype">Business Type</label>
-            <select id="f-biztype" name="Business Type">
-              <option value="">Select one</option>
-              <option>Dress &amp; Clothing Store</option>
-              <option>Fancy Store</option>
-              <option>Wholesale Business</option>
-              <option>Retail Shop</option>
-              <option>Grocery Store</option>
-              <option>Doctor / Professional</option>
-              <option>Office Worker / Salaried</option>
-              <option>Restaurant</option>
-              <option>Entrepreneur / New Business</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="f-service">Service Required</label>
-            <select id="f-service" name="Service Required">
-              <option value="">Select one</option>
-              <option>GST Registration</option>
-              <option>GST Return Filing</option>
-              <option>Income Tax Return Filing</option>
-              <option>Account Outsourcing / Bookkeeping</option>
-              <option>Company Registration</option>
-              <option>Partnership Deed</option>
-              <option>PAN Card Services</option>
-              <option>Digital Signature Certificate</option>
-              <option>Project Report Preparation</option>
-              <option>Audit Services</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="f-msg">Message</label>
-            <textarea id="f-msg" name="Message" placeholder="Tell us a little about what you need help with"></textarea>
-          </div>
+      <!-- <div class="enquiry-direct reveal">
+        <h3 style="font-size:1.2rem; margin-bottom:20px; color:var(--ink);">Ready to get started?</h3>
+        <p style="color:var(--ink-soft); margin-bottom:24px;">Choose your preferred way to reach us:</p>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <a href="tel:+918075521973" class="btn btn-primary" style="width:100%; text-align:center;">
+            <span>Call: +91 8075521973</span>
+          </a>
+          <a href="mailto:mjassociates1992@gmail.com" class="btn btn-primary" style="width:100%; text-align:center;">
+            <span>Email: mjassociates1992@gmail.com</span>
+          </a>
+           <a href="https://wa.me/918075521973" target="_blank" class="btn" style="width:100%; text-align:center; background:#1F6F54; color:white; border-radius:var(--radius-s);">
+            <span>WhatsApp</span>
+          </a> 
         </div>
-        <button type="submit" class="btn btn-primary" id="formSubmitBtn">Send Enquiry</button>
-        <p class="form-note" id="formSent" style="display:none; color:#1F6F54; font-weight:600;">Thank you — your enquiry has been sent!</p>
-        <p class="form-note" id="formError" style="display:none; color:#dc2626; font-weight:600;"></p>
-      </form>
+      </div> -->
     </div>
   </section>
 
@@ -975,58 +934,6 @@
   } else {
     revealEls.forEach(el => el.classList.add('in'));
   }
-
-  // Form submission handler
-  const enquiryForm = document.getElementById('enquiryForm');
-  const formSentMsg = document.getElementById('formSent');
-  const formErrorMsg = document.getElementById('formError');
-  const formSubmitBtn = document.getElementById('formSubmitBtn');
-
-  enquiryForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Hide previous messages
-    formSentMsg.style.display = 'none';
-    formErrorMsg.style.display = 'none';
-    
-    // Disable button and show loading state
-    formSubmitBtn.disabled = true;
-    const originalText = formSubmitBtn.textContent;
-    formSubmitBtn.textContent = 'Sending...';
-    
-    try {
-      const formData = new FormData(enquiryForm);
-      const response = await fetch('send-email.php', {
-        method: 'POST',
-        body: formData
-      });
-      
-      const result = await response.json();
-      
-      if (response.ok && result.success) {
-        // Show success message
-        formSentMsg.style.display = 'block';
-        enquiryForm.reset();
-        
-        // Hide message after 3 seconds
-        setTimeout(() => {
-          formSentMsg.style.display = 'none';
-        }, 3000);
-      } else {
-        // Show error message
-        formErrorMsg.textContent = result.message || 'There was an error sending your enquiry. Please try again.';
-        formErrorMsg.style.display = 'block';
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      formErrorMsg.textContent = 'There was an error sending your enquiry. Please try again.';
-      formErrorMsg.style.display = 'block';
-    } finally {
-      // Re-enable button
-      formSubmitBtn.disabled = false;
-      formSubmitBtn.textContent = originalText;
-    }
-  });
 </script>
 
 </body>
